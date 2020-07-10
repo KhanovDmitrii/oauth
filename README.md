@@ -1,5 +1,9 @@
 # oauth
 
+## Скринкаст по авторизации через ВК 
+
+[Скринкаст](https://drive.google.com/file/d/1i5Ow79iv9Kw09NhFbrqAL3OvAUhwjxE1/view?usp=sharing)
+
 ## Amazon
  * [Документация](https://developer.amazon.com/docs/login-with-amazon/authorization-code-grant.html)
  * [cli](https://aws.amazon.com/ru/cli/)
