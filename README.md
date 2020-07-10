@@ -40,6 +40,6 @@
   * [cli](https://www.reddit.com/r/commandline/)
   
 ## VK
-  * [Документация](https://vk.com/dev/authentication  
+  * [Документация](https://vk.com/dev/authentication)  
   * [cli](https://github.com/vk-cli/vk)
   
