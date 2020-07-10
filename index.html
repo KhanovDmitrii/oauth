@@ -1,0 +1,58 @@
+<html>
+<head>
+    <meta chsrset = "utf-8"/>
+    <title>Реализация oAuth</title>
+    <script src="https://vk.com/js/api/openapi.js?168" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+<h1 id="name">Здравствуй, username!</h1>
+  <button id="vkLogin" >Авторизоваться в VK</button>
+    <script type="text/javascript">
+    $(document).ready(function () {
+
+              // Инициализация
+              VK.init({
+                apiId: 7535671
+              });
+
+              $('#vkLogin').on('click', function () {
+
+                // Авторизация
+                VK.Auth.login(
+                  // callback-функция, которая будет вызвана после авторизации
+                  function (response) {
+
+                    console.log(response)
+
+                    if (response.status === 'connected') { // авторизация прошла успешно
+
+                      var user = response.session.user; //  информация о пользователе
+                      console.log(user);
+                      var elem = document.getElementById("name");
+                      elem.textContent = "Здравствуй, " + user.first_name + "!";
+                    } else if (response.status === 'not_authorized') { // пользователь авторизован в ВКонтакте, но не разрешил доступ приложению;
+
+                    } else if (response.status === 'unknown') { // пользователь не авторизован ВКонтакте.
+
+                    }
+
+                  },
+                  // права доступа (integer)
+                  // допустимые значения:
+                  // AUDIO:8
+                  // FRIENDS:2
+                  // MATCHES:32
+                  // PHOTOS:4
+                  // QUESTIONS:64
+                  // VIDEO:16
+                  // WIKI:128
+                  VK.access.PHOTOS
+                );
+
+              });
+        })
+    </script>
+</body>
+</html>
